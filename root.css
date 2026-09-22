@@ -1,0 +1,24 @@
+:root {
+  /* Colores */
+  --color-primary: #2563eb;
+  --color-secondary: #3acfed;
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+ 
+  /* Tipografía */
+  --font-primary: Arial, sans-serif;
+ 
+  /* Espaciados */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+ 
+  /* Bordes y sombras */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --shadow-card: 0 4px 12px rgb(0 0 0 / 0.1);
+}
