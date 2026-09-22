@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ricardo Alexander Diaz Rivas - Portafolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -85,29 +86,90 @@
     <!-- ---------- SECCIÓN: HABILIDADES ---------- -->
     <section id="habilidades">
       <h2>Habilidades / Skills</h2>
+      <p>
+        A continuación se presentan mis habilidades técnicas organizadas por
+        categoría, con su nivel actual de dominio.
+      </p>
 
+      <!-- CATEGORÍA: FRONTEND -->
       <article>
-        <h3>Tecnologías que domino</h3>
+        <h3>Frontend</h3>
         <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
+          <li class="skill">
+            <span class="skill__icono" aria-hidden="true">🧱</span>
+            <strong>HTML</strong> — Nivel: Intermedio
+            <p>
+              Estructuro páginas web utilizando etiquetas semánticas,
+              jerarquía correcta de encabezados y buenas prácticas de
+              accesibilidad.
+            </p>
+          </li>
+
+          <li class="skill">
+            <span class="skill__icono" aria-hidden="true">🎨</span>
+            <strong>CSS</strong> — Nivel: Intermedio
+            <p>
+              Aplico estilos, distribución de elementos y diseño responsivo
+              básico para adaptar los sitios a distintos tamaños de pantalla.
+            </p>
+          </li>
+
+          <li class="skill">
+            <span class="skill__icono" aria-hidden="true">⚡</span>
+            <strong>JavaScript</strong> — Nivel: Básico
+            <p>
+              Manejo lógica básica, manipulación del DOM y eventos para
+              agregar interactividad a las páginas web.
+            </p>
+          </li>
+
+          <li class="skill">
+            <span class="skill__icono" aria-hidden="true">⚛️</span>
+            <strong>React</strong> — Nivel: En aprendizaje
+            <p>
+              Actualmente estoy aprendiendo a crear componentes y manejar
+              estado básico en aplicaciones con React.
+            </p>
+          </li>
         </ul>
       </article>
 
-      <article>
-        <h3>Tecnologías en aprendizaje</h3>
-        <ul>
-          <li>React</li>
-          <li>Python</li>
-        </ul>
-      </article>
-
+      <!-- CATEGORÍA: HERRAMIENTAS -->
       <article>
         <h3>Herramientas</h3>
         <ul>
-          <li>Git y GitHub</li>
-          <li>Jupyter Notebook</li>
+          <li class="skill">
+            <span class="skill__icono" aria-hidden="true">🗂️</span>
+            <strong>Git y GitHub</strong> — Nivel: Básico
+            <p>
+              Utilizo control de versiones para guardar y compartir mis
+              proyectos (commits, ramas básicas y repositorios).
+            </p>
+          </li>
+
+          <li class="skill">
+            <span class="skill__icono" aria-hidden="true">📓</span>
+            <strong>Jupyter Notebook</strong> — Nivel: Básico
+            <p>
+              Lo utilizo principalmente para prácticas y ejercicios de la
+              carrera relacionados con Inteligencia Artificial.
+            </p>
+          </li>
+        </ul>
+      </article>
+
+      <!-- CATEGORÍA: OTRAS TECNOLOGÍAS -->
+      <article>
+        <h3>Otras tecnologías</h3>
+        <ul>
+          <li class="skill">
+            <span class="skill__icono" aria-hidden="true">🐍</span>
+            <strong>Python</strong> — Nivel: Básico
+            <p>
+              Lo uso en el contexto de mi carrera de Inteligencia Artificial,
+              para ejercicios y prácticas académicas.
+            </p>
+          </li>
         </ul>
       </article>
     </section>
@@ -115,32 +177,95 @@
     <!-- ---------- SECCIÓN: PROYECTOS DESTACADOS ---------- -->
     <section id="proyectos">
       <h2>Proyectos destacados</h2>
+      <p>
+        Estos son proyectos personales, pensados como ejercicios prácticos
+        para aplicar HTML, CSS y JavaScript de forma progresiva.
+      </p>
 
-      <article>
-        <h3>Lista de tareas (To-Do List)</h3>
-        <p>
-          Aplicación sencilla para agregar, marcar como completadas y eliminar
-          tareas, usando HTML, CSS y JavaScript básico.
-        </p>
-        <a href="#" target="_blank" rel="noopener">Ver proyecto en GitHub</a>
+      <!-- COMPONENTE REUTILIZABLE: CARD DE PROYECTO -->
+      <article class="card">
+        <figure class="card__imagen">
+          <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Lista de tareas" width="400" height="250">
+        </figure>
+
+        <div class="card__contenido">
+          <h3>Lista de tareas (To-Do List)</h3>
+          <p>
+            Aplicación sencilla para agregar, marcar como completadas y
+            eliminar tareas.
+          </p>
+
+          <p>
+            <strong>Problema que resuelve:</strong> ayuda a organizar tareas
+            diarias y evitar olvidar pendientes importantes.
+          </p>
+
+          <p>
+            <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
+          </p>
+
+          <!-- Reemplaza estos enlaces cuando el proyecto esté listo y publicado -->
+          <div class="card__enlaces">
+            <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
+            <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+          </div>
+        </div>
       </article>
 
-      <article>
-        <h3>Calculadora básica</h3>
-        <p>
-          Calculadora con las operaciones fundamentales (suma, resta,
-          multiplicación y división) construida con JavaScript.
-        </p>
-        <a href="#" target="_blank" rel="noopener">Ver proyecto en GitHub</a>
+      <article class="card">
+        <figure class="card__imagen">
+          <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Calculadora básica" width="400" height="250">
+        </figure>
+
+        <div class="card__contenido">
+          <h3>Calculadora básica</h3>
+          <p>
+            Calculadora con las operaciones fundamentales: suma, resta,
+            multiplicación y división.
+          </p>
+
+          <p>
+            <strong>Problema que resuelve:</strong> permite realizar cálculos
+            rápidos sin necesidad de abrir otra aplicación.
+          </p>
+
+          <p>
+            <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
+          </p>
+
+          <div class="card__enlaces">
+            <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
+            <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+          </div>
+        </div>
       </article>
 
-      <article>
-        <h3>Conversor de unidades</h3>
-        <p>
-          Herramienta simple para convertir medidas (por ejemplo, de
-          kilómetros a millas o de grados Celsius a Fahrenheit).
-        </p>
-        <a href="#" target="_blank" rel="noopener">Ver proyecto en GitHub</a>
+      <article class="card">
+        <figure class="card__imagen">
+          <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Conversor de unidades" width="400" height="250">
+        </figure>
+
+        <div class="card__contenido">
+          <h3>Conversor de unidades</h3>
+          <p>
+            Herramienta simple para convertir medidas, por ejemplo de
+            kilómetros a millas o de grados Celsius a Fahrenheit.
+          </p>
+
+          <p>
+            <strong>Problema que resuelve:</strong> evita errores al hacer
+            conversiones manuales entre distintas unidades de medida.
+          </p>
+
+          <p>
+            <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
+          </p>
+
+          <div class="card__enlaces">
+            <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
+            <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+          </div>
+        </div>
       </article>
     </section>
 
