@@ -16,12 +16,17 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-primary);
   font-size: var(--font-size-base);
   color: var(--color-text);
   background-color: var(--color-background);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -164,6 +169,14 @@ nav a:focus {
 /* =========================================================
    6. COMPONENTE: CARD DE PROYECTO
    ========================================================= */
+
+/* Contenedor de las cards: CSS Grid, columnas según espacio disponible */
+.proyectos__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
 .card {
   display: flex;
   flex-wrap: wrap;
@@ -260,7 +273,137 @@ textarea:focus {
 }
 
 /* =========================================================
-   8. SECCIÓN: CONTACTO
+   8. SECCIÓN: DESIGN SYSTEM / COMPONENTES
+   ========================================================= */
+
+/* Paleta de colores */
+.paleta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.color-muestra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  height: 100px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  font-size: var(--font-size-sm);
+}
+
+.color-muestra--primary {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.color-muestra--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+}
+
+.color-muestra--background {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.color-muestra--surface {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.color-muestra--text {
+  background-color: var(--color-text);
+  color: var(--color-background);
+}
+
+.color-muestra--text-muted {
+  background-color: var(--color-text-muted);
+  color: var(--color-background);
+}
+
+.color-muestra--border {
+  background-color: var(--color-border);
+  color: var(--color-text);
+}
+
+/* Tipografía */
+.muestra-tipografia > * + * {
+  margin-top: var(--space-sm);
+}
+
+.texto-secundario {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Escala de espaciado */
+.escala-espaciado {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.escala-espaciado li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.espaciado-muestra {
+  display: inline-block;
+  height: var(--space-md);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+.espaciado-muestra--sm {
+  width: var(--space-sm);
+}
+
+.espaciado-muestra--md {
+  width: var(--space-md);
+}
+
+.espaciado-muestra--lg {
+  width: var(--space-lg);
+}
+
+.espaciado-muestra--xl {
+  width: var(--space-xl);
+}
+
+/* Agrupador genérico para ejemplos de componentes */
+.muestra-componentes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+/* Variante de botón secundario (outline) */
+.boton--secundario {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border: var(--border-width) solid var(--color-secondary);
+  box-shadow: none;
+}
+
+.boton--secundario:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+}
+
+/* =========================================================
+   9. SECCIÓN: CONTACTO
    ========================================================= */
 #contacto aside {
   margin-top: var(--space-lg);
@@ -276,7 +419,7 @@ textarea:focus {
 }
 
 /* =========================================================
-   9. FOOTER
+   10. FOOTER
    ========================================================= */
 footer {
   text-align: center;
@@ -286,15 +429,43 @@ footer {
 }
 
 /* =========================================================
-   10. RESPONSIVE
+   11. RESPONSIVE
+   Breakpoints: escritorio (por defecto), tablet (≤900px) y
+   móvil (≤600px). Se usan Flexbox, CSS Grid y unidades
+   relativas para que nada se desborde horizontalmente.
    ========================================================= */
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  section {
+    padding: var(--space-lg) 0;
+  }
+
+  .proyectos__lista {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* ---------- Móvil ---------- */
 @media (max-width: 600px) {
+  header h1 {
+    font-size: var(--font-size-lg);
+  }
+
   .card {
     flex-direction: column;
+  }
+
+  .proyectos__lista {
+    grid-template-columns: 1fr;
   }
 
   nav ul {
     flex-direction: column;
     align-items: center;
+  }
+
+  .paleta {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

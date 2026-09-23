@@ -183,114 +183,248 @@
         para aplicar HTML, CSS y JavaScript de forma progresiva.
       </p>
 
-      <!-- COMPONENTE REUTILIZABLE: CARD DE PROYECTO -->
-      <article class="card">
-        <figure class="card__imagen">
-          <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Lista de tareas" width="400" height="250">
-        </figure>
+      <!-- Contenedor con CSS Grid: organiza las cards en columnas según el ancho disponible -->
+      <div class="proyectos__lista">
 
-        <div class="card__contenido">
-          <h3>Lista de tareas (To-Do List)</h3>
-          <p>
-            Aplicación sencilla para agregar, marcar como completadas y
-            eliminar tareas.
-          </p>
+        <!-- COMPONENTE REUTILIZABLE: CARD DE PROYECTO -->
+        <article class="card">
+          <figure class="card__imagen">
+            <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Lista de tareas" width="400" height="250">
+          </figure>
 
-          <p>
-            <strong>Problema que resuelve:</strong> ayuda a organizar tareas
-            diarias y evitar olvidar pendientes importantes.
-          </p>
+          <div class="card__contenido">
+            <h3>Lista de tareas (To-Do List)</h3>
+            <p>
+              Aplicación sencilla para agregar, marcar como completadas y
+              eliminar tareas.
+            </p>
 
-          <p>
-            <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
-          </p>
+            <p>
+              <strong>Problema que resuelve:</strong> ayuda a organizar tareas
+              diarias y evitar olvidar pendientes importantes.
+            </p>
 
-          <!-- Reemplaza estos enlaces cuando el proyecto esté listo y publicado -->
-          <div class="card__enlaces">
-            <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
-            <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+            <p>
+              <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
+            </p>
+
+            <!-- Reemplaza estos enlaces cuando el proyecto esté listo y publicado -->
+            <div class="card__enlaces">
+              <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
+              <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="card">
-        <figure class="card__imagen">
-          <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Calculadora básica" width="400" height="250">
-        </figure>
+        <article class="card">
+          <figure class="card__imagen">
+            <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Calculadora básica" width="400" height="250">
+          </figure>
 
-        <div class="card__contenido">
-          <h3>Calculadora básica</h3>
-          <p>
-            Calculadora con las operaciones fundamentales: suma, resta,
-            multiplicación y división.
-          </p>
+          <div class="card__contenido">
+            <h3>Calculadora básica</h3>
+            <p>
+              Calculadora con las operaciones fundamentales: suma, resta,
+              multiplicación y división.
+            </p>
 
-          <p>
-            <strong>Problema que resuelve:</strong> permite realizar cálculos
-            rápidos sin necesidad de abrir otra aplicación.
-          </p>
+            <p>
+              <strong>Problema que resuelve:</strong> permite realizar cálculos
+              rápidos sin necesidad de abrir otra aplicación.
+            </p>
 
-          <p>
-            <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
-          </p>
+            <p>
+              <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
+            </p>
 
-          <div class="card__enlaces">
-            <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
-            <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+            <div class="card__enlaces">
+              <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
+              <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="card">
-        <figure class="card__imagen">
-          <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Conversor de unidades" width="400" height="250">
-        </figure>
+        <article class="card">
+          <figure class="card__imagen">
+            <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Conversor de unidades" width="400" height="250">
+          </figure>
 
-        <div class="card__contenido">
-          <h3>Conversor de unidades</h3>
-          <p>
-            Herramienta simple para convertir medidas, por ejemplo de
-            kilómetros a millas o de grados Celsius a Fahrenheit.
-          </p>
+          <div class="card__contenido">
+            <h3>Conversor de unidades</h3>
+            <p>
+              Herramienta simple para convertir medidas, por ejemplo de
+              kilómetros a millas o de grados Celsius a Fahrenheit.
+            </p>
 
-          <p>
-            <strong>Problema que resuelve:</strong> evita errores al hacer
-            conversiones manuales entre distintas unidades de medida.
-          </p>
+            <p>
+              <strong>Problema que resuelve:</strong> evita errores al hacer
+              conversiones manuales entre distintas unidades de medida.
+            </p>
 
-          <p>
-            <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
-          </p>
+            <p>
+              <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
+            </p>
 
-          <div class="card__enlaces">
-            <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
-            <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+            <div class="card__enlaces">
+              <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
+              <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+
+      </div>
     </section>
 
     <!-- ---------- SECCIÓN: DESIGN SYSTEM / COMPONENTES ---------- -->
     <section id="componentes">
       <h2>Design System / Componentes</h2>
+      <p>
+        Esta sección documenta las decisiones visuales y los componentes
+        reutilizables usados a lo largo del portafolio. Todo lo que se
+        muestra aquí es exactamente lo que se usa en el resto del sitio.
+      </p>
 
+      <!-- ---------- COLORES ---------- -->
+      <article>
+        <h3>Colores</h3>
+        <ul class="paleta">
+          <li class="color-muestra color-muestra--primary">
+            <span class="color-muestra__nombre">Primary</span>
+            <code class="color-muestra__valor">#2563eb</code>
+          </li>
+          <li class="color-muestra color-muestra--secondary">
+            <span class="color-muestra__nombre">Secondary</span>
+            <code class="color-muestra__valor">#7c3aed</code>
+          </li>
+          <li class="color-muestra color-muestra--background">
+            <span class="color-muestra__nombre">Background</span>
+            <code class="color-muestra__valor">#ffffff</code>
+          </li>
+          <li class="color-muestra color-muestra--surface">
+            <span class="color-muestra__nombre">Surface</span>
+            <code class="color-muestra__valor">#f8fafc</code>
+          </li>
+          <li class="color-muestra color-muestra--text">
+            <span class="color-muestra__nombre">Text</span>
+            <code class="color-muestra__valor">#0f172a</code>
+          </li>
+          <li class="color-muestra color-muestra--text-muted">
+            <span class="color-muestra__nombre">Text muted</span>
+            <code class="color-muestra__valor">#64748b</code>
+          </li>
+          <li class="color-muestra color-muestra--border">
+            <span class="color-muestra__nombre">Border</span>
+            <code class="color-muestra__valor">#e2e8f0</code>
+          </li>
+        </ul>
+      </article>
+
+      <!-- ---------- TIPOGRAFÍA ---------- -->
+      <article>
+        <h3>Tipografía</h3>
+        <div class="muestra-tipografia">
+          <h1>Título h1 - Ricardo Alexander Diaz Rivas</h1>
+          <h2>Título h2 - Ejemplo de sección</h2>
+          <h3>Título h3 - Ejemplo de subsección</h3>
+          <p>
+            Párrafo de ejemplo: este es el estilo de texto normal que se usa
+            en todo el contenido del portafolio.
+          </p>
+          <p class="texto-secundario">
+            Texto secundario: se usa para descripciones breves, notas y
+            aclaraciones, con un color más suave que el texto principal.
+          </p>
+          <p><a href="#">Este es un enlace de ejemplo</a></p>
+        </div>
+      </article>
+
+      <!-- ---------- ESPACIADO ---------- -->
+      <article>
+        <h3>Espaciado</h3>
+        <p>
+          Escala de espaciados usada en márgenes, rellenos (padding) y
+          separación entre elementos:
+        </p>
+        <ul class="escala-espaciado">
+          <li>
+            <span class="espaciado-muestra espaciado-muestra--sm"></span>
+            <code>--space-sm</code> (0.5rem)
+          </li>
+          <li>
+            <span class="espaciado-muestra espaciado-muestra--md"></span>
+            <code>--space-md</code> (1rem)
+          </li>
+          <li>
+            <span class="espaciado-muestra espaciado-muestra--lg"></span>
+            <code>--space-lg</code> (2rem)
+          </li>
+          <li>
+            <span class="espaciado-muestra espaciado-muestra--xl"></span>
+            <code>--space-xl</code> (3rem)
+          </li>
+        </ul>
+      </article>
+
+      <!-- ---------- COMPONENTES ---------- -->
       <article>
         <h3>Botones</h3>
-        <button type="button">Botón normal</button>
-        <button type="button" disabled>Botón deshabilitado</button>
+        <div class="muestra-componentes">
+          <button type="button" class="boton--secundario">Botón secundario</button>
+          <button type="button">Botón primario</button>
+          <button type="button" disabled>Botón deshabilitado</button>
+        </div>
       </article>
 
       <article>
-        <h3>Formulario de ejemplo</h3>
-        <form>
+        <h3>Skill / Badge</h3>
+        <p>Mismo componente <code>.skill</code> usado en la sección Habilidades:</p>
+        <ul class="muestra-componentes">
+          <li class="skill">
+            <span class="skill__icono" aria-hidden="true">🧱</span>
+            <strong>HTML</strong> — Nivel: Intermedio
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Card de proyecto</h3>
+        <p>Mismo componente <code>.card</code> usado en la sección Proyectos destacados:</p>
+        <article class="card">
+          <figure class="card__imagen">
+            <img src="https://via.placeholder.com/400x250" alt="Ejemplo de imagen para una card de proyecto" width="400" height="250">
+          </figure>
+          <div class="card__contenido">
+            <h3>Nombre del proyecto</h3>
+            <p>Breve descripción del proyecto de ejemplo.</p>
+            <div class="card__enlaces">
+              <a href="#">Repositorio en GitHub</a>
+              <a href="#">Ver proyecto en línea</a>
+            </div>
+          </div>
+        </article>
+      </article>
+
+      <article>
+        <h3>Inputs y Textarea</h3>
+        <div class="muestra-componentes">
           <label for="ejemplo-nombre">Nombre:</label>
-          <input type="text" id="ejemplo-nombre" name="ejemplo-nombre">
+          <input type="text" id="ejemplo-nombre" name="ejemplo-nombre" placeholder="Escribe tu nombre">
 
           <label for="ejemplo-mensaje">Mensaje:</label>
-          <textarea id="ejemplo-mensaje" name="ejemplo-mensaje" rows="4"></textarea>
+          <textarea id="ejemplo-mensaje" name="ejemplo-mensaje" rows="3" placeholder="Escribe un mensaje"></textarea>
+        </div>
+      </article>
 
-          <button type="submit">Enviar</button>
-        </form>
+      <article>
+        <h3>Navbar</h3>
+        <p>Mismo componente <code>nav</code> usado en el encabezado del sitio:</p>
+        <nav aria-label="Ejemplo de navegación">
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
       </article>
     </section>
 
