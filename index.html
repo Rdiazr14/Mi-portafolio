@@ -4,18 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ricardo Alexander Diaz Rivas - Portafolio</title>
-  <link rel="stylesheet" href="root.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./css/root.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
   <!-- ===================== HEADER Y NAVEGACIÓN ===================== -->
   <header>
-    <h1>Ricardo Alexander Diaz Rivas</h1>
+    <div class="header__barra">
+      <h1>Ricardo Alexander Diaz Rivas</h1>
+
+      <!-- Botón para cambiar entre tema claro y oscuro (JS: script.js) -->
+      <button type="button" id="theme-toggle" class="boton--secundario" aria-label="Cambiar entre tema claro y oscuro">
+        🌙 Modo oscuro
+      </button>
+    </div>
+
     <p>Estudiante de Inteligencia Artificial en la UNEMI, con interés en desarrollo web</p>
 
+    <!-- Botón hamburguesa: solo visible en pantallas pequeñas (JS: script.js) -->
+    <button type="button" id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú de navegación">
+      ☰
+    </button>
+
     <nav>
-      <ul>
+      <ul id="menu-principal">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
@@ -212,6 +225,20 @@
             <div class="card__enlaces">
               <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
               <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+              <!-- Botón que abre el modal con la información del proyecto (JS: script.js) -->
+              <button
+                type="button"
+                class="boton-detalle"
+                data-nombre="Lista de tareas (To-Do List)"
+                data-descripcion="Aplicación sencilla para agregar, marcar como completadas y eliminar tareas."
+                data-problema="Ayuda a organizar tareas diarias y evitar olvidar pendientes importantes."
+                data-tecnologias="HTML, CSS, JavaScript"
+                data-imagen="https://via.placeholder.com/400x250"
+                data-repo="#"
+                data-demo="#"
+              >
+                Ver más detalles
+              </button>
             </div>
           </div>
         </article>
@@ -240,6 +267,19 @@
             <div class="card__enlaces">
               <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
               <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+              <button
+                type="button"
+                class="boton-detalle"
+                data-nombre="Calculadora básica"
+                data-descripcion="Calculadora con las operaciones fundamentales: suma, resta, multiplicación y división."
+                data-problema="Permite realizar cálculos rápidos sin necesidad de abrir otra aplicación."
+                data-tecnologias="HTML, CSS, JavaScript"
+                data-imagen="https://via.placeholder.com/400x250"
+                data-repo="#"
+                data-demo="#"
+              >
+                Ver más detalles
+              </button>
             </div>
           </div>
         </article>
@@ -268,6 +308,19 @@
             <div class="card__enlaces">
               <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
               <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+              <button
+                type="button"
+                class="boton-detalle"
+                data-nombre="Conversor de unidades"
+                data-descripcion="Herramienta simple para convertir medidas, por ejemplo de kilómetros a millas o de grados Celsius a Fahrenheit."
+                data-problema="Evita errores al hacer conversiones manuales entre distintas unidades de medida."
+                data-tecnologias="HTML, CSS, JavaScript"
+                data-imagen="https://via.placeholder.com/400x250"
+                data-repo="#"
+                data-demo="#"
+              >
+                Ver más detalles
+              </button>
             </div>
           </div>
         </article>
@@ -432,23 +485,32 @@
     <section id="contacto">
       <h2>Contacto</h2>
 
-      <form action="#" method="post">
+      <!-- JS (script.js) valida los campos e impide el envío si hay errores -->
+      <form id="form-contacto" action="#" method="post" novalidate>
         <div>
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required>
+          <span class="error" id="error-nombre"></span>
         </div>
 
         <div>
           <label for="correo">Correo electrónico:</label>
           <input type="email" id="correo" name="correo" required>
+          <span class="error" id="error-correo"></span>
         </div>
 
         <div>
           <label for="mensaje">Mensaje:</label>
           <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          <span class="error" id="error-mensaje"></span>
         </div>
 
         <button type="submit">Enviar mensaje</button>
+
+        <!-- Aquí JS muestra un mensaje de éxito cuando el formulario es válido -->
+        <p id="mensaje-exito" class="mensaje-exito" hidden>
+          ¡Mensaje enviado correctamente! Te responderé pronto.
+        </p>
       </form>
 
       <!--
@@ -463,6 +525,20 @@
           <li>Correo: ricardo.diaz@ejemplo.com</li>
           <li>GitHub: github.com/ricardo-diaz</li>
           <li>LinkedIn: linkedin.com/in/ricardo-diaz</li>
+
+          <!--
+            PUNTO 10 - REPOSITORIO EN GITHUB:
+            Coloca aquí la URL de tu repositorio público una vez creado.
+            Ejemplo: https://github.com/ricardo-diaz/portafolio
+          -->
+          <li>Repositorio del proyecto: <a href="#" target="_blank" rel="noopener">Pendiente: pega aquí la URL de tu repositorio en GitHub</a></li>
+
+          <!--
+            PUNTO 11 - PUBLICACIÓN EN GITHUB PAGES:
+            Coloca aquí la URL pública del sitio una vez publicado con
+            GitHub Pages. Ejemplo: https://ricardo-diaz.github.io/portafolio
+          -->
+          <li>Sitio publicado (GitHub Pages): <a href="#" target="_blank" rel="noopener">Pendiente: pega aquí la URL de GitHub Pages</a></li>
         </ul>
       </aside>
     </section>
@@ -474,5 +550,23 @@
     <p>&copy; 2026 Ricardo Alexander Diaz Rivas - Portafolio personal. Todos los derechos reservados.</p>
   </footer>
 
+  <!--
+    MODAL PARA VER LA INFORMACIÓN DE UN PROYECTO
+    Se abre con JS al hacer clic en "Ver más detalles" de cualquier card.
+    <dialog> es un elemento nativo de HTML5 pensado exactamente para esto.
+  -->
+  <dialog id="modal-proyecto" class="modal">
+    <button type="button" id="modal-cerrar" class="modal__cerrar" aria-label="Cerrar">&times;</button>
+    <div id="modal-contenido">
+      <!-- JS (script.js) inserta aquí la información del proyecto seleccionado -->
+    </div>
+  </dialog>
+
+  <!-- Botón flotante: aparece al hacer scroll y regresa al inicio de la página -->
+  <button type="button" id="back-to-top" class="back-to-top" aria-label="Volver al inicio" hidden>
+    ↑
+  </button>
+
+  <script src="./js/index.js"></script>
 </body>
 </html>

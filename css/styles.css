@@ -18,6 +18,7 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -78,16 +79,39 @@ header {
   text-align: center;
 }
 
+.header__barra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-sm);
+}
+
 header h1 {
   font-size: var(--font-size-xl);
   color: var(--color-primary);
-  margin-bottom: var(--space-sm);
 }
 
 header p {
   font-size: var(--font-size-md);
   color: var(--color-text-muted);
   margin-bottom: var(--space-md);
+}
+
+/* Botón hamburguesa: oculto en escritorio, visible solo en móvil (ver media query) */
+.nav-toggle {
+  display: none;
+  background: none;
+  color: var(--color-text);
+  box-shadow: none;
+  font-size: var(--font-size-lg);
+  padding: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.nav-toggle:hover {
+  background-color: var(--color-border);
 }
 
 nav ul {
@@ -272,8 +296,28 @@ textarea:focus {
   outline: 2px solid var(--color-primary);
 }
 
+/* Estados de validación del formulario (JS: script.js) */
+input.input--error,
+textarea.input--error {
+  outline: 2px solid #dc2626;
+}
+
+.error {
+  display: block;
+  min-height: 1.1em;
+  color: #dc2626;
+  font-size: var(--font-size-sm);
+  font-weight: normal;
+  margin-top: var(--space-sm);
+}
+
+.mensaje-exito {
+  color: #16a34a;
+  font-weight: bold;
+}
+
 /* =========================================================
-   8. SECCIÓN: DESIGN SYSTEM / COMPONENTES
+   9. SECCIÓN: DESIGN SYSTEM / COMPONENTES
    ========================================================= */
 
 /* Paleta de colores */
@@ -403,7 +447,7 @@ textarea:focus {
 }
 
 /* =========================================================
-   9. SECCIÓN: CONTACTO
+   10. SECCIÓN: CONTACTO
    ========================================================= */
 #contacto aside {
   margin-top: var(--space-lg);
@@ -419,7 +463,7 @@ textarea:focus {
 }
 
 /* =========================================================
-   10. FOOTER
+   11. FOOTER
    ========================================================= */
 footer {
   text-align: center;
@@ -429,7 +473,93 @@ footer {
 }
 
 /* =========================================================
-   11. RESPONSIVE
+   12. TEMA CLARO / OSCURO
+   El cambio real de colores está definido en root.css, bajo
+   el selector [data-theme="dark"]. Aquí solo se añade una
+   transición suave para que el cambio no se sienta brusco.
+   ========================================================= */
+body,
+header,
+.card,
+.skill,
+#contacto aside,
+input,
+textarea {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* =========================================================
+   13. MODAL DE PROYECTO
+   ========================================================= */
+.modal {
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding: var(--space-lg);
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal::backdrop {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.modal__cerrar {
+  float: right;
+  background: none;
+  color: var(--color-text-muted);
+  box-shadow: none;
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  padding: var(--space-sm);
+}
+
+.modal__cerrar:hover {
+  background-color: var(--color-border);
+}
+
+#modal-contenido h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+#modal-contenido img {
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
+}
+
+#modal-contenido p {
+  margin-bottom: var(--space-sm);
+}
+
+#modal-contenido .card__enlaces {
+  margin-top: var(--space-md);
+}
+
+/* =========================================================
+   14. BOTÓN "VOLVER AL INICIO"
+   ========================================================= */
+.back-to-top {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  font-size: var(--font-size-md);
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+}
+
+.back-to-top[hidden] {
+  display: none;
+}
+
+/* =========================================================
+   15. RESPONSIVE
    Breakpoints: escritorio (por defecto), tablet (≤900px) y
    móvil (≤600px). Se usan Flexbox, CSS Grid y unidades
    relativas para que nada se desborde horizontalmente.
@@ -460,12 +590,29 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .paleta {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Menú hamburguesa: el botón se muestra y el nav se oculta
+     hasta que JS (script.js) le agrega la clase "nav--abierto" */
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav ul.nav--abierto {
+    display: flex;
+  }
+
+  .back-to-top {
+    right: var(--space-md);
+    bottom: var(--space-md);
   }
 }
