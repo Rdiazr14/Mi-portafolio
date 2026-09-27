@@ -7,19 +7,18 @@
    Cambiar un valor aquí actualiza todo el sitio a la vez.
    ========================================================= */
 :root {
-
   /* ---------- Colores ---------- */
   --color-primary: #2563eb;
   --color-secondary: #7c3aed;
-  --color-background: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text: #0f172a;
-  --color-text-muted: #64748b;
-  --color-border: #e2e8f0;
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-border: #334155;
+  color-scheme: dark;
 
   /* ---------- Tipografía ---------- */
   --font-primary: Arial, sans-serif;
-
   --font-size-sm: 0.875rem;   /* texto pequeño / notas */
   --font-size-base: 1rem;     /* texto normal (párrafos) */
   --font-size-md: 1.125rem;   /* subtítulos, h3 */
@@ -48,19 +47,4 @@
   --max-width-form: 500px;    /* ancho máximo de formularios */
   --icon-size: 1.5rem;        /* tamaño de los íconos de habilidades */
   --avatar-size: 180px;       /* tamaño de la foto de perfil */
-}
-
-/* =========================================================
-   TEMA OSCURO
-   Se activa cuando JS (script.js) agrega data-theme="dark"
-   a la etiqueta <html>. Solo se sobrescriben los colores;
-   el resto del sistema (espaciados, radios, sombras) es el
-   mismo en ambos temas.
-   ========================================================= */
-[data-theme="dark"] {
-  --color-background: #0f172a;
-  --color-surface: #1e293b;
-  --color-text: #f1f5f9;
-  --color-text-muted: #94a3b8;
-  --color-border: #334155;
 }

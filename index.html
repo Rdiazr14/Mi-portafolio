@@ -13,11 +13,6 @@
   <header>
     <div class="header__barra">
       <h1>Ricardo Alexander Diaz Rivas</h1>
-
-      <!-- Botón para cambiar entre tema claro y oscuro (JS: script.js) -->
-      <button type="button" id="theme-toggle" class="boton--secundario" aria-label="Cambiar entre tema claro y oscuro">
-        🌙 Modo oscuro
-      </button>
     </div>
 
     <p>Estudiante de Inteligencia Artificial en la UNEMI, con interés en desarrollo web</p>
@@ -47,7 +42,7 @@
       <h2>Bienvenido a mi portafolio</h2>
       <p>
         Soy Ricardo Alexander Diaz Rivas, estudiante de la carrera de
-        Inteligencia Artificial en la Universidad Estatal de Milagro (UNEMI).
+        Ingeniería de Software en la Universidad Estatal de Milagro (UNEMI).
         Me interesa el desarrollo web y estoy aprendiendo a construir
         interfaces con HTML, CSS, JavaScript y React. Aquí encontrarás
         información sobre mí, mis habilidades y los proyectos en los que he
@@ -61,7 +56,7 @@
       -->
       <figure>
         <img src="https://via.placeholder.com/300x300" alt="Foto de perfil de Ricardo Alexander Diaz Rivas" width="180" height="180">
-        <figcaption>Ricardo Alexander Diaz Rivas - Estudiante de Inteligencia Artificial</figcaption>
+        <figcaption>Ricardo Alexander Diaz Rivas - Estudiante de Ingeniería de Software</figcaption>
       </figure>
     </section>
 
@@ -73,7 +68,7 @@
         <h3>Quién soy</h3>
         <p>
           Mi nombre completo es Ricardo Alexander Diaz Rivas. Soy un
-          estudiante interesado en la inteligencia artificial, el desarrollo
+          estudiante interesado en el desarrollo
           web y la resolución de problemas mediante programación. Me gusta
           aprender tecnologías nuevas y aplicarlas en proyectos prácticos.
         </p>
@@ -82,7 +77,7 @@
       <article>
         <h3>Perfil profesional</h3>
         <p>
-          Estudiante de Inteligencia Artificial con interés en el desarrollo
+          Estudiante de Ingeniería de Software con interés en el desarrollo
           web, combinando el análisis de datos con la creación de
           aplicaciones web funcionales y bien estructuradas.
         </p>
@@ -91,8 +86,7 @@
       <article>
         <h3>Formación académica</h3>
         <p>
-          Universidad Estatal de Milagro (UNEMI) - Carrera de Inteligencia
-          Artificial.
+          Universidad Estatal de Milagro (UNEMI) - Carrera de Ingeniería de Software.
         </p>
       </article>
     </section>
@@ -105,12 +99,13 @@
         categoría, con su nivel actual de dominio.
       </p>
 
+      <div class="habilidades__categorias">
       <!-- CATEGORÍA: FRONTEND -->
       <article>
         <h3>Frontend</h3>
         <ul>
           <li class="skill">
-            <span class="skill__icono" aria-hidden="true">🧱</span>
+            <span class="skill__icono" aria-hidden="true"><img src="/img/logo/icon_html.png" alt="HTML" width="50" height="50"></span>
             <strong>HTML</strong> — Nivel: Intermedio
             <p>
               Estructuro páginas web utilizando etiquetas semánticas,
@@ -120,7 +115,7 @@
           </li>
 
           <li class="skill">
-            <span class="skill__icono" aria-hidden="true">🎨</span>
+            <span class="skill__icono" aria-hidden="true"><img src="/img/logo/icon_css.png" alt="CSS" width="50" height="50"></span>
             <strong>CSS</strong> — Nivel: Intermedio
             <p>
               Aplico estilos, distribución de elementos y diseño responsivo
@@ -129,7 +124,7 @@
           </li>
 
           <li class="skill">
-            <span class="skill__icono" aria-hidden="true">⚡</span>
+            <span class="skill__icono" aria-hidden="true"><img src="/img/logo/icon_js.png" alt="JavaScript" width="50" height="50"></span>
             <strong>JavaScript</strong> — Nivel: Básico
             <p>
               Manejo lógica básica, manipulación del DOM y eventos para
@@ -138,54 +133,67 @@
           </li>
 
           <li class="skill">
-            <span class="skill__icono" aria-hidden="true">⚛️</span>
+            <span class="skill__icono" aria-hidden="true"><img src="/img/logo/icon_react.png" alt="React" width="50" height="50"></span>
             <strong>React</strong> — Nivel: En aprendizaje
             <p>
               Actualmente estoy aprendiendo a crear componentes y manejar
               estado básico en aplicaciones con React.
             </p>
           </li>
+
         </ul>
       </article>
 
-      <!-- CATEGORÍA: HERRAMIENTAS -->
+      <div class="habilidades__columna-secundaria">
       <article>
         <h3>Herramientas</h3>
         <ul>
           <li class="skill">
-            <span class="skill__icono" aria-hidden="true">🗂️</span>
-            <strong>Git y GitHub</strong> — Nivel: Básico
+            <span class="skill__iconos" aria-hidden="true">
+              <img src="/img/logo/icon_git.png" alt="" width="50" height="50">
+            </span>
+             <strong>Git</strong> — Nivel: Básico
+            <p>
+              Utilizo control de versiones para guardar y compartir mis
+              proyectos (commits, ramas básicas y repositorios).
+            </p>
+          </li>
+          <li class="skill">
+            <span class="skill__iconos" aria-hidden="true">
+              <img src="/img/logo/icon_github.png" alt="" width="50" height="50"></span>
+             <strong>GitHub</strong> — Nivel: Básico
             <p>
               Utilizo control de versiones para guardar y compartir mis
               proyectos (commits, ramas básicas y repositorios).
             </p>
           </li>
 
-          <li class="skill">
-            <span class="skill__icono" aria-hidden="true">📓</span>
-            <strong>Jupyter Notebook</strong> — Nivel: Básico
-            <p>
-              Lo utilizo principalmente para prácticas y ejercicios de la
-              carrera relacionados con Inteligencia Artificial.
-            </p>
-          </li>
         </ul>
       </article>
-
       <!-- CATEGORÍA: OTRAS TECNOLOGÍAS -->
       <article>
         <h3>Otras tecnologías</h3>
         <ul>
           <li class="skill">
-            <span class="skill__icono" aria-hidden="true">🐍</span>
+            <span class="skill__icono" aria-hidden="true"><img src="/img/logo/icon_python.png" alt="Python" width="50" height="50"></span>
             <strong>Python</strong> — Nivel: Básico
             <p>
-              Lo uso en el contexto de mi carrera de Inteligencia Artificial,
+              Lo uso en el contexto de mi carrera en Ingeniería de Software,
+              para ejercicios y prácticas académicas.
+            </p>
+          </li>
+          <li class="skill">
+            <span class="skill__icono" aria-hidden="true"><img src="/img/logo/icon_django.png" alt="Django" width="50" height="50"></span>
+            <strong>Django</strong> — Nivel: Básico
+            <p>
+              Lo uso en el contexto de mi carrera en Ingeniería de Software,
               para ejercicios y prácticas académicas.
             </p>
           </li>
         </ul>
       </article>
+      </div>
+      </div>
     </section>
 
     <!-- ---------- SECCIÓN: PROYECTOS DESTACADOS ---------- -->
@@ -202,19 +210,21 @@
         <!-- COMPONENTE REUTILIZABLE: CARD DE PROYECTO -->
         <article class="card">
           <figure class="card__imagen">
-            <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Lista de tareas" width="400" height="250">
+            <img src="/img/Projects/BlackJack/blackjack.png" alt="Captura del proyecto Black Jack" width="400" height="250">
           </figure>
 
           <div class="card__contenido">
-            <h3>Lista de tareas (To-Do List)</h3>
+            <h3>Black Jack</h3>
             <p>
-              Aplicación sencilla para agregar, marcar como completadas y
-              eliminar tareas.
+              Juego del black Jack implementado con HTML, CSS y JavaScript. 
+              Permite al usuario jugar contra la computadora, 
+              siguiendo las reglas básicas del juego.
             </p>
 
             <p>
-              <strong>Problema que resuelve:</strong> ayuda a organizar tareas
-              diarias y evitar olvidar pendientes importantes.
+              <strong>Problema que resuelve:</strong> ayuda a practicar contra la maquina 
+              y mejorar la estrategia del jugador, además de ser una forma divertida 
+              de pasar el tiempo.
             </p>
 
             <p>
@@ -223,19 +233,17 @@
 
             <!-- Reemplaza estos enlaces cuando el proyecto esté listo y publicado -->
             <div class="card__enlaces">
-              <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
-              <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+              <a href="https://github.com/Ricardo14Diaz/1SProyectofinalblackjack.git" target="_blank" rel="noopener">Repositorio en GitHub</a>
               <!-- Botón que abre el modal con la información del proyecto (JS: script.js) -->
               <button
                 type="button"
                 class="boton-detalle"
-                data-nombre="Lista de tareas (To-Do List)"
-                data-descripcion="Aplicación sencilla para agregar, marcar como completadas y eliminar tareas."
-                data-problema="Ayuda a organizar tareas diarias y evitar olvidar pendientes importantes."
+                data-nombre="Black Jack"
+                data-descripcion="Juego del black Jack implementado con HTML, CSS y JavaScript. Permite al usuario jugar contra la computadora, siguiendo las reglas básicas del juego."
+                data-problema="Ayuda a practicar contra la maquina y mejorar la estrategia del jugador, además de ser una forma divertida de pasar el tiempo."
                 data-tecnologias="HTML, CSS, JavaScript"
-                data-imagen="https://via.placeholder.com/400x250"
-                data-repo="#"
-                data-demo="#"
+                data-imagenes="/img/Projects/BlackJack/blackjack.png"
+                data-repo="https://github.com/Ricardo14Diaz/1SProyectofinalblackjack.git"
               >
                 Ver más detalles
               </button>
@@ -245,38 +253,77 @@
 
         <article class="card">
           <figure class="card__imagen">
-            <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Calculadora básica" width="400" height="250">
+            <img src="/img/Projects/SistemaMedico/SM1.png" alt="Captura del proyecto Sistema médico" width="400" height="250">
           </figure>
 
           <div class="card__contenido">
-            <h3>Calculadora básica</h3>
+            <h3>Sistema medico</h3>
             <p>
-              Calculadora con las operaciones fundamentales: suma, resta,
-              multiplicación y división.
+              Sistema de gestión para administrar pacientes y citas médicas.
             </p>
 
             <p>
-              <strong>Problema que resuelve:</strong> permite realizar cálculos
-              rápidos sin necesidad de abrir otra aplicación.
+              <strong>Problema que resuelve:</strong> permite a los profesionales 
+              de la salud organizar y acceder a la información de sus pacientes 
+              de manera eficiente, mejorando la atención médica y reduciendo 
+              errores administrativos.
             </p>
 
             <p>
-              <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
+              <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript, Django.
             </p>
 
             <div class="card__enlaces">
-              <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
-              <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+              <a href="https://github.com/Ricardo14Diaz/Sistema_medico-POO.git" target="_blank" rel="noopener">Repositorio en GitHub</a>
               <button
                 type="button"
                 class="boton-detalle"
-                data-nombre="Calculadora básica"
-                data-descripcion="Calculadora con las operaciones fundamentales: suma, resta, multiplicación y división."
-                data-problema="Permite realizar cálculos rápidos sin necesidad de abrir otra aplicación."
-                data-tecnologias="HTML, CSS, JavaScript"
-                data-imagen="https://via.placeholder.com/400x250"
-                data-repo="#"
-                data-demo="#"
+                data-nombre="Sistema medico"
+                data-descripcion="Sistema de gestión para administrar pacientes y citas médicas."
+                data-problema="Permite a los profesionales de la salud organizar y acceder a la información de sus pacientes 
+                de manera eficiente, mejorando la atención médica y reduciendo errores administrativos."
+                data-tecnologias="HTML, CSS, JavaScript, Django"
+                data-imagenes="/img/Projects/SistemaMedico/SM1.png|/img/Projects/SistemaMedico/SM2.png"
+                data-repo="https://github.com/Ricardo14Diaz/Sistema_medico-POO.git">
+                Ver más detalles
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="card__imagen">
+            <img src="/img/Projects/PredictaAI/PredictaAI1.png" alt="Captura del proyecto Predicta AI" width="400" height="250">
+          </figure>
+
+          <div class="card__contenido">
+            <h3>Predicta AI</h3>
+            <p>
+              Sistema inteligente para predecir riesgos, optimizar capital 
+              y tomar desiciones empresarias basadas en casos reales, sistema 
+              centrado en mipimes
+            </p>
+
+            <p>
+              <strong>Problema que resuelve:</strong> Ayuda a las mipimes a tomar decisiones 
+              empresariales basadas en datos,
+            </p>
+
+            <p>
+              <strong>Tecnologías utilizadas:</strong> HTML, CSS, Django.
+            </p>
+
+            <div class="card__enlaces">
+              <a href="https://github.com/diegowar2525/PredictaAI.git" target="_blank" rel="noopener">Repositorio en GitHub</a>
+              <button
+                type="button"
+                class="boton-detalle"
+                data-nombre="Predicta AI"
+                data-descripcion="Sistema inteligente para predecir riesgos, optimizar capital y apoyar decisiones empresariales basadas en datos."
+                data-problema="Ayuda a las mipymes a tomar decisiones empresariales basadas en datos."
+                data-tecnologias="HTML, CSS, Django"
+                data-imagenes="/img/Projects/PredictaAI/PredictaAI1.png|/img/Projects/PredictaAI/PredictaAI2.png|/img/Projects/PredictaAI/PredictaAI3.png"
+                data-repo="https://github.com/diegowar2525/PredictaAI.git"
               >
                 Ver más detalles
               </button>
@@ -286,39 +333,38 @@
 
         <article class="card">
           <figure class="card__imagen">
-            <img src="https://via.placeholder.com/400x250" alt="Captura de pantalla del proyecto Conversor de unidades" width="400" height="250">
+            <img src="/img/Projects/Eduflex/Eduflex1.png" alt="Captura del proyecto Eduflex" width="400" height="250">
           </figure>
 
           <div class="card__contenido">
-            <h3>Conversor de unidades</h3>
+            <h3>Eduflex</h3>
             <p>
-              Herramienta simple para convertir medidas, por ejemplo de
-              kilómetros a millas o de grados Celsius a Fahrenheit.
+              Sistema educativo pensado para apoyar a personas con TDA,
+              discalculia o disgrafía.
             </p>
 
             <p>
-              <strong>Problema que resuelve:</strong> evita errores al hacer
-              conversiones manuales entre distintas unidades de medida.
+              <strong>Problema que resuelve:</strong> busca reducir barreras
+              de acceso y participación en actividades educativas.
             </p>
 
             <p>
-              <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
+              <strong>Tecnologías utilizadas:</strong> Por definir.
             </p>
 
             <div class="card__enlaces">
-              <a href="#" target="_blank" rel="noopener">Repositorio en GitHub</a>
-              <a href="#" target="_blank" rel="noopener">Ver proyecto en línea</a>
+              <a href="https://github.com/jeandaly20/Eduflex.git" target="_blank" rel="noopener">Repositorio en GitHub</a>
               <button
                 type="button"
                 class="boton-detalle"
-                data-nombre="Conversor de unidades"
-                data-descripcion="Herramienta simple para convertir medidas, por ejemplo de kilómetros a millas o de grados Celsius a Fahrenheit."
-                data-problema="Evita errores al hacer conversiones manuales entre distintas unidades de medida."
-                data-tecnologias="HTML, CSS, JavaScript"
-                data-imagen="https://via.placeholder.com/400x250"
-                data-repo="#"
-                data-demo="#"
-              >
+                data-nombre="Eduflex"
+                data-imagenes="/img/Projects/Eduflex/Eduflex1.png|/img/Projects/Eduflex/Eduflex2.png"
+                data-descripcion="Sistema educativo pensado para apoyar a personas con TDA, discalculia o disgrafía."
+                data-problema="Busca reducir barreras de acceso y participación en actividades educativas."
+                data-tecnologias="Por definir"
+                data-imagen="/img/Projects/Eduflex/Eduflex1.png|/img/Projects/Eduflex/Eduflex2.png"
+                data-repo="https://github.com/jeandaly20/Eduflex.git"
+                >
                 Ver más detalles
               </button>
             </div>
@@ -351,23 +397,23 @@
           </li>
           <li class="color-muestra color-muestra--background">
             <span class="color-muestra__nombre">Background</span>
-            <code class="color-muestra__valor">#ffffff</code>
+            <code class="color-muestra__valor">#0f172a</code>
           </li>
           <li class="color-muestra color-muestra--surface">
             <span class="color-muestra__nombre">Surface</span>
-            <code class="color-muestra__valor">#f8fafc</code>
+            <code class="color-muestra__valor">#1e293b</code>
           </li>
           <li class="color-muestra color-muestra--text">
             <span class="color-muestra__nombre">Text</span>
-            <code class="color-muestra__valor">#0f172a</code>
+            <code class="color-muestra__valor">#f1f5f9</code>
           </li>
           <li class="color-muestra color-muestra--text-muted">
             <span class="color-muestra__nombre">Text muted</span>
-            <code class="color-muestra__valor">#64748b</code>
+            <code class="color-muestra__valor">#94a3b8</code>
           </li>
           <li class="color-muestra color-muestra--border">
             <span class="color-muestra__nombre">Border</span>
-            <code class="color-muestra__valor">#e2e8f0</code>
+            <code class="color-muestra__valor">#334155</code>
           </li>
         </ul>
       </article>
@@ -531,7 +577,7 @@
             Coloca aquí la URL de tu repositorio público una vez creado.
             Ejemplo: https://github.com/ricardo-diaz/portafolio
           -->
-          <li>Repositorio del proyecto: <a href="#" target="_blank" rel="noopener">Pendiente: pega aquí la URL de tu repositorio en GitHub</a></li>
+          <li>Repositorio del proyecto: <a href="#" target="_blank" rel="noopener"></a></li>
 
           <!--
             PUNTO 11 - PUBLICACIÓN EN GITHUB PAGES:

@@ -1,18 +1,16 @@
 /* =========================================================
-   SCRIPT.JS
-   JavaScript del portafolio. Aquí viven las 5 funcionalidades
-   interactivas del sitio:
+  SCRIPT.JS
+  JavaScript del portafolio. Aquí viven las 4 funcionalidades
+  interactivas del sitio:
 
-   1. Menú responsive (hamburguesa) en pantallas pequeñas.
-   2. Cambio entre tema claro y oscuro, con persistencia
-      mediante localStorage.
-   3. Modal para ver la información completa de un proyecto.
-   4. Validación del formulario de contacto.
-   5. Botón para volver al inicio de la página.
+  1. Menú responsive (hamburguesa) en pantallas pequeñas.
+  2. Modal para ver la información completa de un proyecto.
+  3. Validación del formulario de contacto.
+  4. Botón para volver al inicio de la página.
 
-   Todo el código espera a que el HTML esté completamente
-   cargado antes de ejecutarse.
-   ========================================================= */
+  Todo el código espera a que el HTML esté completamente
+  cargado antes de ejecutarse.
+  ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -43,40 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* =======================================================
-     2. TEMA CLARO / OSCURO CON PERSISTENCIA (localStorage)
-     Guarda la preferencia del usuario para que se mantenga
-     la próxima vez que visite el sitio.
-     ======================================================= */
-  const themeToggle = document.getElementById('theme-toggle');
-  const raiz = document.documentElement; // la etiqueta <html>
-
-  function aplicarTema(tema) {
-    if (tema === 'dark') {
-      raiz.setAttribute('data-theme', 'dark');
-      if (themeToggle) themeToggle.textContent = '☀️ Modo claro';
-    } else {
-      raiz.removeAttribute('data-theme');
-      if (themeToggle) themeToggle.textContent = '🌙 Modo oscuro';
-    }
-  }
-
-  // Al cargar la página, se revisa si ya había una preferencia guardada.
-  const temaGuardado = localStorage.getItem('tema');
-  if (temaGuardado) {
-    aplicarTema(temaGuardado);
-  }
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function () {
-      const temaActual = raiz.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const nuevoTema = temaActual === 'dark' ? 'light' : 'dark';
-      aplicarTema(nuevoTema);
-      localStorage.setItem('tema', nuevoTema);
-    });
-  }
-
-  /* =======================================================
-     3. MODAL PARA VER LA INFORMACIÓN DE UN PROYECTO
+    2. MODAL PARA VER LA INFORMACIÓN DE UN PROYECTO
      Cada botón "Ver más detalles" trae la información del
      proyecto en sus atributos data-*. Al hacer clic, esos
      datos se insertan dentro del <dialog> y se muestra.
@@ -89,10 +54,31 @@ document.addEventListener('DOMContentLoaded', function () {
   botonesDetalle.forEach(function (boton) {
     boton.addEventListener('click', function () {
       const datos = boton.dataset;
+      const imagenes = (datos.imagenes || datos.imagen || '')
+        .split('|')
+        .map(function (imagen) { return imagen.trim(); })
+        .filter(Boolean);
+      let indiceImagen = 0;
+
+      modal.classList.toggle('modal--galeria', imagenes.length > 0);
+      const galeria = imagenes.length
+        ? `
+          <div class="galeria-proyecto">
+            <img class="galeria-proyecto__imagen" src="${imagenes[0]}" alt="Imagen 1 de ${datos.nombre}">
+            ${imagenes.length > 1 ? `
+              <div class="galeria-proyecto__controles">
+                <button type="button" class="galeria-proyecto__boton" data-paso="-1" aria-label="Imagen anterior">&#8592;</button>
+                <span class="galeria-proyecto__contador" aria-live="polite">1 / ${imagenes.length}</span>
+                <button type="button" class="galeria-proyecto__boton" data-paso="1" aria-label="Imagen siguiente">&#8594;</button>
+              </div>
+            ` : ''}
+          </div>
+        `
+        : '';
 
       modalContenido.innerHTML = `
-        <img src="${datos.imagen}" alt="Captura de pantalla de ${datos.nombre}">
         <h3>${datos.nombre}</h3>
+        ${galeria}
         <p>${datos.descripcion}</p>
         <p><strong>Problema que resuelve:</strong> ${datos.problema}</p>
         <p><strong>Tecnologías utilizadas:</strong> ${datos.tecnologias}</p>
@@ -101,6 +87,20 @@ document.addEventListener('DOMContentLoaded', function () {
           <a href="${datos.demo}" target="_blank" rel="noopener">Ver proyecto en línea</a>
         </div>
       `;
+
+      if (imagenes.length > 1) {
+        const imagenGaleria = modalContenido.querySelector('.galeria-proyecto__imagen');
+        const contadorGaleria = modalContenido.querySelector('.galeria-proyecto__contador');
+
+        modalContenido.querySelectorAll('.galeria-proyecto__boton').forEach(function (control) {
+          control.addEventListener('click', function () {
+            indiceImagen = (indiceImagen + Number(control.dataset.paso) + imagenes.length) % imagenes.length;
+            imagenGaleria.src = imagenes[indiceImagen];
+            imagenGaleria.alt = `Imagen ${indiceImagen + 1} de ${datos.nombre}`;
+            contadorGaleria.textContent = `${indiceImagen + 1} / ${imagenes.length}`;
+          });
+        });
+      }
 
       modal.showModal();
     });

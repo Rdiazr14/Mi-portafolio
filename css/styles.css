@@ -169,19 +169,55 @@ nav a:focus {
   margin-bottom: var(--space-lg);
 }
 
+.habilidades__categorias {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.habilidades__categorias ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.habilidades__categorias > article ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.habilidades__columna-secundaria {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: var(--space-lg);
+}
+
 .skill {
   list-style: none;
   background-color: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: var(--space-md);
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
   box-shadow: var(--shadow-sm);
 }
 
 .skill__icono {
   font-size: var(--icon-size);
   margin-right: var(--space-sm);
+}
+
+.skill__iconos {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.skill__iconos img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
 .skill p {
@@ -216,12 +252,15 @@ nav a:focus {
   flex: 1 1 250px;
 }
 
-.card__imagen img {
-  border-radius: var(--radius-sm);
+#proyectos .card,
+#proyectos .card__imagen,
+#proyectos .card__contenido {
+  min-width: 0;
 }
 
-.card__contenido {
+#proyectos .card__contenido {
   flex: 2 1 300px;
+  overflow-wrap: anywhere;
 }
 
 .card__contenido h3 {
@@ -235,8 +274,15 @@ nav a:focus {
 
 .card__enlaces {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-md);
   margin-top: var(--space-md);
+}
+
+#proyectos .card__enlaces > * {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .card__enlaces a {
@@ -473,23 +519,7 @@ footer {
 }
 
 /* =========================================================
-   12. TEMA CLARO / OSCURO
-   El cambio real de colores está definido en root.css, bajo
-   el selector [data-theme="dark"]. Aquí solo se añade una
-   transición suave para que el cambio no se sienta brusco.
-   ========================================================= */
-body,
-header,
-.card,
-.skill,
-#contacto aside,
-input,
-textarea {
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-/* =========================================================
-   13. MODAL DE PROYECTO
+   12. MODAL DE PROYECTO
    ========================================================= */
 .modal {
   border: none;
@@ -498,8 +528,15 @@ textarea {
   background-color: var(--color-background);
   color: var(--color-text);
   padding: var(--space-lg);
-  max-width: 500px;
-  width: 90%;
+  max-width: 720px;
+  width: min(92vw, 720px);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal--galeria {
+  max-width: 1000px;
+  width: min(94vw, 1000px);
 }
 
 .modal::backdrop {
@@ -530,89 +567,128 @@ textarea {
   margin-bottom: var(--space-md);
 }
 
+.galeria-proyecto {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.galeria-proyecto__imagen {
+  width: 100%;
+  height: min(65vh, 640px);
+  object-fit: contain;
+  background-color: var(--color-surface);
+  margin: 0;
+}
+
+#modal-contenido p {
+  margin-bottom: var(--space-sm);
+}
+
+.galeria-proyecto__controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.galeria-proyecto__boton {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+.galeria-proyecto__contador {
+  min-width: 3rem;
+  text-align: center;
+}
+#modal-contenido .card__enlaces {
+  margin-top: var(--space-md);
+}
+
+/* =========================================================
+   12. MODAL DE PROYECTO
+   ========================================================= */
+.modal {
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding: var(--space-lg);
+  max-width: 720px;
+  width: min(92vw, 720px);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal--galeria {
+  max-width: 1000px;
+  width: min(94vw, 1000px);
+}
+
+.modal::backdrop {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.modal__cerrar {
+  float: right;
+  background: none;
+  color: var(--color-text-muted);
+  box-shadow: none;
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  padding: var(--space-sm);
+}
+
+.modal__cerrar:hover {
+  background-color: var(--color-border);
+}
+
+#modal-contenido h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+#modal-contenido img {
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
+}
+
+.galeria-proyecto {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.galeria-proyecto__imagen {
+  width: 100%;
+  height: min(65vh, 640px);
+  object-fit: contain;
+  background-color: var(--color-surface);
+  margin: 0;
+}
+
+.galeria-proyecto__controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.galeria-proyecto__boton {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+.galeria-proyecto__contador {
+  min-width: 3rem;
+  text-align: center;
+}
+
 #modal-contenido p {
   margin-bottom: var(--space-sm);
 }
 
 #modal-contenido .card__enlaces {
   margin-top: var(--space-md);
-}
-
-/* =========================================================
-   14. BOTÓN "VOLVER AL INICIO"
-   ========================================================= */
-.back-to-top {
-  position: fixed;
-  right: var(--space-lg);
-  bottom: var(--space-lg);
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  padding: 0;
-  font-size: var(--font-size-md);
-  box-shadow: var(--shadow-md);
-  z-index: 10;
-}
-
-.back-to-top[hidden] {
-  display: none;
-}
-
-/* =========================================================
-   15. RESPONSIVE
-   Breakpoints: escritorio (por defecto), tablet (≤900px) y
-   móvil (≤600px). Se usan Flexbox, CSS Grid y unidades
-   relativas para que nada se desborde horizontalmente.
-   ========================================================= */
-
-/* ---------- Tablet ---------- */
-@media (max-width: 900px) {
-  section {
-    padding: var(--space-lg) 0;
-  }
-
-  .proyectos__lista {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  }
-}
-
-/* ---------- Móvil ---------- */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: var(--font-size-lg);
-  }
-
-  .card {
-    flex-direction: column;
-  }
-
-  .proyectos__lista {
-    grid-template-columns: 1fr;
-  }
-
-  .paleta {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Menú hamburguesa: el botón se muestra y el nav se oculta
-     hasta que JS (script.js) le agrega la clase "nav--abierto" */
-  .nav-toggle {
-    display: inline-block;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  nav ul.nav--abierto {
-    display: flex;
-  }
-
-  .back-to-top {
-    right: var(--space-md);
-    bottom: var(--space-md);
-  }
 }
