@@ -1,15 +1,3 @@
-/* =========================================================
-   STYLES.CSS
-   Estilos del sitio. Este archivo NO define valores nuevos
-   de color, espaciado, sombra o tamaño: todos se toman de
-   las Custom Properties definidas en root.css.
-   IMPORTANTE: root.css debe cargarse ANTES que este archivo
-   en el <head> del HTML.
-   ========================================================= */
-
-/* =========================================================
-   1. RESET BÁSICO
-   ========================================================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,9 +28,6 @@ a {
   color: var(--color-primary);
 }
 
-/* =========================================================
-   2. ESTRUCTURA GENERAL
-   ========================================================= */
 main {
   max-width: var(--max-width-content);
   margin: 0 auto;
@@ -50,32 +35,15 @@ main {
 }
 
 section {
+  min-height: 100vh;
+  min-height: 100svh;
   padding: var(--space-xl) 0;
   border-bottom: var(--border-width) solid var(--color-border);
 }
 
-section h2 {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-md);
-  color: var(--color-primary);
-}
-
-section h3 {
-  font-size: var(--font-size-md);
-  margin-bottom: var(--space-sm);
-}
-
-section > p {
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-lg);
-}
-
-/* =========================================================
-   3. HEADER Y NAVEGACIÓN
-   ========================================================= */
 header {
   background-color: var(--color-surface);
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-md) var(--space-md);
   text-align: center;
 }
 
@@ -96,10 +64,9 @@ header h1 {
 header p {
   font-size: var(--font-size-md);
   color: var(--color-text-muted);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
-/* Botón hamburguesa: oculto en escritorio, visible solo en móvil (ver media query) */
 .nav-toggle {
   display: none;
   background: none;
@@ -137,36 +104,71 @@ nav a:focus {
   box-shadow: var(--shadow-sm);
 }
 
-/* =========================================================
-   4. SECCIÓN: INICIO
-   ========================================================= */
 #inicio {
   text-align: center;
+  padding-top: var(--space-lg);
 }
 
 #inicio figure {
   margin-top: var(--space-lg);
 }
 
-#inicio img {
-  width: var(--avatar-size);
-  height: var(--avatar-size);
-  margin: 0 auto;
-  border-radius: 50%;
-  box-shadow: var(--shadow-lg);
+#foto-perfil {
+  width: min(var(--avatar-size), 100%);
+  margin-right: auto;
+  margin-left: auto;
 }
 
-#inicio figcaption {
+#foto-perfil img {
+  width: 100%;
+  aspect-ratio: 1;
+  height: auto;
+  margin: 0;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  object-position: center;
+}
+
+#descripcion-foto {
   margin-top: var(--space-sm);
   color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
 }
 
-/* =========================================================
-   5. SECCIÓN: SOBRE MÍ Y HABILIDADES
-   ========================================================= */
 #sobre-mi article,
 #habilidades > article {
   margin-bottom: var(--space-lg);
+}
+
+#sobre-mi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sobre-mi__contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.sobre-mi__texto {
+  min-width: 0;
+}
+
+.sobre-mi__imagen {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+}
+
+.sobre-mi__imagen img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
 }
 
 .habilidades__categorias {
@@ -181,14 +183,31 @@ nav a:focus {
   gap: var(--space-md);
 }
 
-.habilidades__categorias > article ul {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.habilidades__categorias > article ul,
+.habilidades__columna-secundaria > article ul {
+  grid-template-columns: 1fr;
+  flex: 1;
+}
+
+.habilidades__categorias > article,
+.habilidades__columna-secundaria > article {
+  display: flex;
+  flex-direction: column;
+}
+
+.habilidades__categorias > article:first-child {
+  grid-column: 1 / -1;
+}
+
+.habilidades__categorias > article:first-child ul {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .habilidades__columna-secundaria {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-content: start;
+  align-items: stretch;
   gap: var(--space-lg);
 }
 
@@ -200,6 +219,25 @@ nav a:focus {
   padding: var(--space-md);
   margin-bottom: 0;
   box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 700px) {
+  .sobre-mi__contenido {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .habilidades__categorias {
+    grid-template-columns: 1fr;
+  }
+
+  .habilidades__columna-secundaria {
+    grid-template-columns: 1fr;
+  }
+
+  .habilidades__categorias > article:first-child ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .skill__icono {
@@ -226,11 +264,6 @@ nav a:focus {
   margin-top: var(--space-sm);
 }
 
-/* =========================================================
-   6. COMPONENTE: CARD DE PROYECTO
-   ========================================================= */
-
-/* Contenedor de las cards: CSS Grid, columnas según espacio disponible */
 .proyectos__lista {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -290,9 +323,6 @@ nav a:focus {
   font-weight: bold;
 }
 
-/* =========================================================
-   7. COMPONENTES: BOTONES Y FORMULARIOS
-   ========================================================= */
 button {
   font-family: var(--font-primary);
   font-size: var(--font-size-base);
@@ -315,13 +345,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  max-width: var(--max-width-form);
-}
-
 label {
   font-weight: bold;
   margin-bottom: var(--space-sm);
@@ -342,7 +365,6 @@ textarea:focus {
   outline: 2px solid var(--color-primary);
 }
 
-/* Estados de validación del formulario (JS: script.js) */
 input.input--error,
 textarea.input--error {
   outline: 2px solid #dc2626;
@@ -362,11 +384,6 @@ textarea.input--error {
   font-weight: bold;
 }
 
-/* =========================================================
-   9. SECCIÓN: DESIGN SYSTEM / COMPONENTES
-   ========================================================= */
-
-/* Paleta de colores */
 .paleta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -423,7 +440,6 @@ textarea.input--error {
   color: var(--color-text);
 }
 
-/* Tipografía */
 .muestra-tipografia > * + * {
   margin-top: var(--space-sm);
 }
@@ -433,7 +449,6 @@ textarea.input--error {
   font-size: var(--font-size-sm);
 }
 
-/* Escala de espaciado */
 .escala-espaciado {
   list-style: none;
   display: flex;
@@ -470,7 +485,6 @@ textarea.input--error {
   width: var(--space-xl);
 }
 
-/* Agrupador genérico para ejemplos de componentes */
 .muestra-componentes {
   display: flex;
   flex-wrap: wrap;
@@ -479,7 +493,6 @@ textarea.input--error {
   list-style: none;
 }
 
-/* Variante de botón secundario (outline) */
 .boton--secundario {
   background-color: transparent;
   color: var(--color-secondary);
@@ -492,9 +505,6 @@ textarea.input--error {
   color: var(--color-background);
 }
 
-/* =========================================================
-   10. SECCIÓN: CONTACTO
-   ========================================================= */
 #contacto aside {
   margin-top: var(--space-lg);
   padding: var(--space-md);
@@ -508,9 +518,6 @@ textarea.input--error {
   margin-top: var(--space-sm);
 }
 
-/* =========================================================
-   11. FOOTER
-   ========================================================= */
 footer {
   text-align: center;
   padding: var(--space-lg);
@@ -518,9 +525,6 @@ footer {
   font-size: var(--font-size-sm);
 }
 
-/* =========================================================
-   12. MODAL DE PROYECTO
-   ========================================================= */
 .modal {
   border: none;
   border-radius: var(--radius-md);
@@ -605,9 +609,6 @@ footer {
   margin-top: var(--space-md);
 }
 
-/* =========================================================
-   12. MODAL DE PROYECTO
-   ========================================================= */
 .modal {
   border: none;
   border-radius: var(--radius-md);

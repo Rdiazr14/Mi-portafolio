@@ -9,15 +9,13 @@
 </head>
 <body>
 
-  <!-- ===================== HEADER Y NAVEGACIÓN ===================== -->
   <header>
     <div class="header__barra">
       <h1>Ricardo Alexander Diaz Rivas</h1>
     </div>
 
-    <p>Estudiante de Inteligencia Artificial en la UNEMI, con interés en desarrollo web</p>
+    <p>Estudiante de Inteligencia Artificial en la UNEMI, con interés en desarrollo web y ciberseguridad</p>
 
-    <!-- Botón hamburguesa: solo visible en pantallas pequeñas (JS: script.js) -->
     <button type="button" id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú de navegación">
       ☰
     </button>
@@ -34,10 +32,7 @@
     </nav>
   </header>
 
-  <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
   <main>
-
-    <!-- ---------- SECCIÓN: INICIO / PRESENTACIÓN ---------- -->
     <section id="inicio">
       <h2>Bienvenido a mi portafolio</h2>
       <p>
@@ -49,21 +44,18 @@
         trabajado.
       </p>
 
-      <!--
-        ESPACIO PARA LA FOTOGRAFÍA / AVATAR:
-        Reemplaza el valor de "src" por la ruta de tu propia imagen,
-        por ejemplo: src="imagenes/foto-perfil.jpg"
-      -->
-      <figure>
-        <img src="https://via.placeholder.com/300x300" alt="Foto de perfil de Ricardo Alexander Diaz Rivas" width="180" height="180">
-        <figcaption>Ricardo Alexander Diaz Rivas - Estudiante de Ingeniería de Software</figcaption>
+      <figure id="foto-perfil">
+        <img src="/img/Profile/Profile.png" alt="Foto de perfil de Ricardo Alexander Diaz Rivas" width="180" height="180">
+        <figcaption id="descripcion-foto">Ricardo Alexander Diaz Rivas - Estudiante de Ingeniería de Software</figcaption>
       </figure>
+
     </section>
 
-    <!-- ---------- SECCIÓN: SOBRE MÍ ---------- -->
     <section id="sobre-mi">
       <h2>Sobre mí</h2>
 
+      <div class="sobre-mi__contenido">
+        <div class="sobre-mi__texto">
       <article>
         <h3>Quién soy</h3>
         <p>
@@ -89,9 +81,14 @@
           Universidad Estatal de Milagro (UNEMI) - Carrera de Ingeniería de Software.
         </p>
       </article>
+        </div>
+
+        <figure class="sobre-mi__imagen">
+          <img src="/img/Sobre mi/sobre_mi.jpg" alt="Imagen de ejemplo programando" width="1200" height="675">
+        </figure>
+      </div>
     </section>
 
-    <!-- ---------- SECCIÓN: HABILIDADES ---------- -->
     <section id="habilidades">
       <h2>Habilidades / Skills</h2>
       <p>
@@ -100,7 +97,6 @@
       </p>
 
       <div class="habilidades__categorias">
-      <!-- CATEGORÍA: FRONTEND -->
       <article>
         <h3>Frontend</h3>
         <ul>
@@ -170,7 +166,6 @@
 
         </ul>
       </article>
-      <!-- CATEGORÍA: OTRAS TECNOLOGÍAS -->
       <article>
         <h3>Otras tecnologías</h3>
         <ul>
@@ -196,7 +191,6 @@
       </div>
     </section>
 
-    <!-- ---------- SECCIÓN: PROYECTOS DESTACADOS ---------- -->
     <section id="proyectos">
       <h2>Proyectos destacados</h2>
       <p>
@@ -204,10 +198,7 @@
         para aplicar HTML, CSS y JavaScript de forma progresiva.
       </p>
 
-      <!-- Contenedor con CSS Grid: organiza las cards en columnas según el ancho disponible -->
       <div class="proyectos__lista">
-
-        <!-- COMPONENTE REUTILIZABLE: CARD DE PROYECTO -->
         <article class="card">
           <figure class="card__imagen">
             <img src="/img/Projects/BlackJack/blackjack.png" alt="Captura del proyecto Black Jack" width="400" height="250">
@@ -231,10 +222,8 @@
               <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript.
             </p>
 
-            <!-- Reemplaza estos enlaces cuando el proyecto esté listo y publicado -->
             <div class="card__enlaces">
               <a href="https://github.com/Ricardo14Diaz/1SProyectofinalblackjack.git" target="_blank" rel="noopener">Repositorio en GitHub</a>
-              <!-- Botón que abre el modal con la información del proyecto (JS: script.js) -->
               <button
                 type="button"
                 class="boton-detalle"
@@ -374,7 +363,6 @@
       </div>
     </section>
 
-    <!-- ---------- SECCIÓN: DESIGN SYSTEM / COMPONENTES ---------- -->
     <section id="componentes">
       <h2>Design System / Componentes</h2>
       <p>
@@ -383,7 +371,6 @@
         muestra aquí es exactamente lo que se usa en el resto del sitio.
       </p>
 
-      <!-- ---------- COLORES ---------- -->
       <article>
         <h3>Colores</h3>
         <ul class="paleta">
@@ -418,7 +405,6 @@
         </ul>
       </article>
 
-      <!-- ---------- TIPOGRAFÍA ---------- -->
       <article>
         <h3>Tipografía</h3>
         <div class="muestra-tipografia">
@@ -437,7 +423,6 @@
         </div>
       </article>
 
-      <!-- ---------- ESPACIADO ---------- -->
       <article>
         <h3>Espaciado</h3>
         <p>
@@ -464,7 +449,6 @@
         </ul>
       </article>
 
-      <!-- ---------- COMPONENTES ---------- -->
       <article>
         <h3>Botones</h3>
         <div class="muestra-componentes">
@@ -472,35 +456,6 @@
           <button type="button">Botón primario</button>
           <button type="button" disabled>Botón deshabilitado</button>
         </div>
-      </article>
-
-      <article>
-        <h3>Skill / Badge</h3>
-        <p>Mismo componente <code>.skill</code> usado en la sección Habilidades:</p>
-        <ul class="muestra-componentes">
-          <li class="skill">
-            <span class="skill__icono" aria-hidden="true">🧱</span>
-            <strong>HTML</strong> — Nivel: Intermedio
-          </li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Card de proyecto</h3>
-        <p>Mismo componente <code>.card</code> usado en la sección Proyectos destacados:</p>
-        <article class="card">
-          <figure class="card__imagen">
-            <img src="https://via.placeholder.com/400x250" alt="Ejemplo de imagen para una card de proyecto" width="400" height="250">
-          </figure>
-          <div class="card__contenido">
-            <h3>Nombre del proyecto</h3>
-            <p>Breve descripción del proyecto de ejemplo.</p>
-            <div class="card__enlaces">
-              <a href="#">Repositorio en GitHub</a>
-              <a href="#">Ver proyecto en línea</a>
-            </div>
-          </div>
-        </article>
       </article>
 
       <article>
@@ -527,11 +482,9 @@
       </article>
     </section>
 
-    <!-- ---------- SECCIÓN: CONTACTO ---------- -->
     <section id="contacto">
       <h2>Contacto</h2>
 
-      <!-- JS (script.js) valida los campos e impide el envío si hay errores -->
       <form id="form-contacto" action="#" method="post" novalidate>
         <div>
           <label for="nombre">Nombre:</label>
@@ -553,62 +506,38 @@
 
         <button type="submit">Enviar mensaje</button>
 
-        <!-- Aquí JS muestra un mensaje de éxito cuando el formulario es válido -->
         <p id="mensaje-exito" class="mensaje-exito" hidden>
           ¡Mensaje enviado correctamente! Te responderé pronto.
         </p>
       </form>
 
-      <!--
-        ESPACIO PARA INFORMACIÓN DE CONTACTO PROFESIONAL:
-        Reemplaza estos datos por tu correo, GitHub y LinkedIn reales.
-        No publiques información personal sensible (dirección, cédula,
-        número de teléfono personal, etc.).
-      -->
       <aside>
         <h3>Información de contacto profesional</h3>
         <ul>
-          <li>Correo: ricardo.diaz@ejemplo.com</li>
-          <li>GitHub: github.com/ricardo-diaz</li>
-          <li>LinkedIn: linkedin.com/in/ricardo-diaz</li>
+          <li>Correo: <a href="mailto:rdiazr@unemi.edu.ec">rdiazr@unemi.edu.ec</a></li>
+          <li>GitHub: <a href="https://github.com/Rdiazr14" target="_blank" rel="noopener noreferrer">Rdiazr14</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/ricardo-diaz-333b54386?utm_
+            source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">Ricardo Diaz</a></li>
 
-          <!--
-            PUNTO 10 - REPOSITORIO EN GITHUB:
-            Coloca aquí la URL de tu repositorio público una vez creado.
-            Ejemplo: https://github.com/ricardo-diaz/portafolio
-          -->
-          <li>Repositorio del proyecto: <a href="#" target="_blank" rel="noopener"></a></li>
+          <li>Repositorio del proyecto: <a href="https://github.com/Rdiazr14/Mi-portafolio.git" target="_blank" rel="noopener noreferrer">Mi-portafolio</a></li>
 
-          <!--
-            PUNTO 11 - PUBLICACIÓN EN GITHUB PAGES:
-            Coloca aquí la URL pública del sitio una vez publicado con
-            GitHub Pages. Ejemplo: https://ricardo-diaz.github.io/portafolio
-          -->
-          <li>Sitio publicado (GitHub Pages): <a href="#" target="_blank" rel="noopener">Pendiente: pega aquí la URL de GitHub Pages</a></li>
+          <li>Sitio publicado (GitHub Pages): <a href="https://rdiazr14.github.io/Mi-portafolio/" target="_blank" rel="noopener noreferrer">URL de la pagina desplegada</a></li>
         </ul>
       </aside>
     </section>
 
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer>
     <p>&copy; 2026 Ricardo Alexander Diaz Rivas - Portafolio personal. Todos los derechos reservados.</p>
   </footer>
 
-  <!--
-    MODAL PARA VER LA INFORMACIÓN DE UN PROYECTO
-    Se abre con JS al hacer clic en "Ver más detalles" de cualquier card.
-    <dialog> es un elemento nativo de HTML5 pensado exactamente para esto.
-  -->
   <dialog id="modal-proyecto" class="modal">
     <button type="button" id="modal-cerrar" class="modal__cerrar" aria-label="Cerrar">&times;</button>
     <div id="modal-contenido">
-      <!-- JS (script.js) inserta aquí la información del proyecto seleccionado -->
     </div>
   </dialog>
 
-  <!-- Botón flotante: aparece al hacer scroll y regresa al inicio de la página -->
   <button type="button" id="back-to-top" class="back-to-top" aria-label="Volver al inicio" hidden>
     ↑
   </button>
